@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0e0b16;
+    color: white;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background: #1a1625;
+    padding: 15px 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.cities {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 10px;
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.city {
+    background-size: cover;
+    background-position: center;
+    padding: 60px;
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+/* Set specific sizes for certain images to match the layout */
+.city:nth-child(1) { grid-column: span 2; height: 200px; width: 150px; } /* الرياض */
+.city:nth-child(2) { grid-column: span 1; height: 200px;width: 150px } /* أبها */
+.city:nth-child(3) { grid-column: span 1; height: 200px;width: 150px } /* نيوم */
+.city:nth-child(4) { grid-column: span 1; height: 200px;width: 150px } /* جدة */
+.city:nth-child(5) { grid-column: span 1; height: 200px;width: 150px } /* الخبر */
+.city:nth-child(6) { grid-column: span 1; height: 200px;width: 150px } /* الطائف */
+
+.info {
+    margin-top: 20px;
+}
+
+footer {
+    margin-top: 50px;
+    background: #1a1625;
+    padding: 10px;
+}
