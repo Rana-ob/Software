@@ -1,0 +1,366 @@
+body {
+    font-family: 'Almarai', sans-serif;
+    background-color: #0a0213;
+    color: white;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+button{
+    font-family: 'Almarai', sans-serif;
+    
+}
+
+/*h--------footer and header----------------------*/
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background-color:  #10021d;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.logo img {
+    width: 100px;
+    height: 100px;
+    
+}
+#language-link img{
+    width: 40px;
+    height: 35px;
+
+}
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 20px;
+    transition: background 0.3s ease;
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.footer {
+background-color: #130227; 
+color: #ffffff;
+padding: 20px 0;
+text-align: center;
+font-size: 14px;
+position: relative; 
+width: 100%;
+margin-top: 500px; 
+}
+
+
+#copy {
+color:#ffffff;
+
+}
+.footer a {
+color: #00bcd4;
+text-decoration: none;
+margin: 0 10px;
+font-weight: bold;
+transition: color 0.3s ease;
+}
+
+.footer a:hover {
+color: #00e5ff;
+}
+
+.f-footer{
+background-color: #34065f; 
+color: #ffffff;
+
+text-align: center;
+padding: 20px 10px;
+font-size: 14px;
+position: fixed;
+bottom: 0;
+width: 100%;
+}
+
+.f-footer a {
+color: #00bcd4;
+text-decoration: none;
+margin: 0 10px;
+font-weight: bold;
+transition: color 0.3s ease;
+}
+
+.f-footer a:hover {
+color: #00e5ff;
+}
+
+/*End of footer and header -----------------------------*/
+
+.rial-icon {
+    width: 40px; /* حجم الصورة */
+    height: 40px;
+    vertical-align: middle; /* لضبط المحاذاة مع النص */
+    margin: 0 5px; /* مسافة صغيرة بين الرقم والصورة */
+}
+
+/*rana */
+.hero {
+    position: relative; 
+    width: 100%;
+    height: 100vh; 
+   
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5); 
+}
+
+.hero .halla {
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    text-align: center;
+    color: white;
+}
+
+.hero .halla h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+}
+
+.hero .halla p {
+    font-size: 1.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+}
+.matches {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #24093a;
+}
+.match-card {
+    background: #1d072fc2;
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.match-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.match-card button {
+    background: #6a0dad;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+
+.video-section {
+    padding: 40px 20px;
+    background-color: #0a0213;
+}
+
+
+.video-section video {
+    width: 100%; 
+    max-width: 800px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+.about {
+    padding: 40px 20px;
+    background-color: #0a0213;
+    text-align: center;
+}
+.about h2 {
+font-size: 2em;
+margin-bottom: 20px;
+color: #ffffff;
+border: 2px solid #e1f053;
+display: inline-block; 
+padding: 10px 20px; 
+border-radius: 50px; 
+}
+.about p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: white;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.about p:first-of-type {
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #6a0dad;
+}
+.vision {
+    padding: 40px 20px;
+    background-color: #0a0213;
+}
+
+.vision h2 {
+    font-size: 2em;
+    margin-bottom: 40px;
+    color: #ffffff;
+    border: 2px solid #f053e0;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+
+.vision ul {
+    list-style: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 80px;         }
+
+.vision ul li {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    position: relative;
+    padding-top: 70px;
+    text-align: center;
+    padding: 20px;
+}
+
+.vision ul li img {
+    position: absolute;
+    top: -50px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 10%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.stadiums {
+    padding: 40px 20px;
+    background-color: #0a0213;
+}
+.stadiums h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-size: 2em;
+color: #ffffff;
+border: 2px solid #3ce821;
+display: inline-block; 
+padding: 10px 20px; 
+border-radius: 50px; 
+    
+}
+.stadium-map, .stadium-img {
+    width: 80%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.stadiumsR {
+    position: relative;
+    display: inline-block;
+}
+
+.stadium-img {
+    width: 993px; 
+    height: 574px;
+}
+
+
+.overlay {
+    position: absolute;
+    width: 70px;
+    height: 70px; 
+} 
+
+#left-arrow {
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+#right-arrow {
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+
+
+
+.heroResale h1 {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: xx-large;
+}
+
+.resale {
+    background: #2c113c;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 550px;
+    height: 500px;
+ 
+    box-shadow: 0px 0px 20px rgba(155, 52, 235, 0.7);
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.ticket-option {
+    background: white;
+    color: black;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px 0;
+    border: 2px solid #9b34eb;
+}
+.confirm-btoon {
+    background:#770295;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 10px;
+    position: absolute;
+    top:95%;
+    left:42%;
+}
+.confirm-btn:hover {
+    background: #7d1fc9;
+}
