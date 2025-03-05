@@ -59,66 +59,35 @@ button{
 }
 
 .footer {
-background-color: #130227; 
-color: #ffffff;
-padding: 20px 0;
-text-align: center;
-font-size: 14px;
-position: relative; 
-width: 100%;
-margin-top: 500px; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0b0013;
+    color: white;
+    padding: 20px;
+    border: 1px solid #a144c9;
+    border-radius: 10px;
+    max-width: 100%;
+    text-align: center;
 }
-
-
-#copy {
-color:#ffffff;
-
+.footer-logo img {
+    width: 150px;
 }
-.footer a {
-color: #00bcd4;
-text-decoration: none;
-margin: 0 10px;
-font-weight: bold;
-transition: color 0.3s ease;
+.footer-section {
+    flex: 1;
+    padding: 10px;
 }
-
-.footer a:hover {
-color: #00e5ff;
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
-
-.f-footer{
-background-color: #34065f; 
-color: #ffffff;
-
-text-align: center;
-padding: 20px 10px;
-font-size: 14px;
-position: fixed;
-bottom: 0;
-width: 100%;
+.footer-icons a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
 }
-
-.f-footer a {
-color: #00bcd4;
-text-decoration: none;
-margin: 0 10px;
-font-weight: bold;
-transition: color 0.3s ease;
-}
-
-.f-footer a:hover {
-color: #00e5ff;
-}
-
-/*End of footer and header -----------------------------*/
-
-.rial-icon {
-    width: 40px; /* حجم الصورة */
-    height: 40px;
-    vertical-align: middle; /* لضبط المحاذاة مع النص */
-    margin: 0 5px; /* مسافة صغيرة بين الرقم والصورة */
-}
-
 /*rana */
 .hero {
     position: relative; 
