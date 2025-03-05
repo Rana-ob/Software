@@ -16,6 +16,7 @@ button{
 .header {
     display: flex;
     align-items: center;
+    height: 80px;
     justify-content: space-between;
     padding: 15px 30px;
     background-color:  #10021d;
@@ -31,8 +32,9 @@ button{
 }
 
 .logo img {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
     
 }
 #language-link img{
@@ -71,9 +73,13 @@ button{
     border-radius: 10px;
     max-width: 100%;
     text-align: center;
+    height: 150px;
+
 }
 .footer-logo img {
     width: 150px;
+    height: 150px;
+    object-fit: contain;
 }
 .footer-section {
     flex: 1;
