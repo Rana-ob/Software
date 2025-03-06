@@ -103,7 +103,71 @@
             font-size: 16px;
             outline: none;
         }
+/* 🔹 تحديد موقع العلامات على الجانب الأيمن */
+.location-markers {
+    position: absolute;
+    right: -30px;
+    top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
 
+/* 🔹 شكل الدوائر */
+.marker {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 🔹 العلامة العلوية (بيضاء مع نقطة سوداء) */
+.marker-top {
+    border: 2px solid white;
+    background-color: transparent;
+    position: relative;
+}
+
+.marker-top::after {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background-color: white;
+    border-radius: 50%;
+    display: block;
+}
+
+/* 🔹 الخط المتقطع */
+.dashed-line {
+    width: 2px;
+    height: 25px;
+    background: repeating-linear-gradient(
+        to bottom,
+        white,
+        white 4px,
+        transparent 4px,
+        transparent 8px
+    );
+}
+
+/* 🔹 العلامة السفلية (بنفسجية) */
+.marker-bottom {
+    border: 2px solid #a855f7;
+    background-color: transparent;
+    position: relative;
+}
+
+.marker-bottom::after {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background-color: #a855f7;
+    border-radius: 50%;
+    display: block;
+}
         /* 🔹 زر تبديل الاتجاهات */
         .swap-btn {
             background: none;
@@ -173,6 +237,8 @@
         .transport-buttons button:active {
             background: #7d3bb8; /* اللون المُنار */
         }
+        
+        
 
         /* 🔹 تمييز الزر عند التركيز عليه (لمزيد من التفاعل) */
         .transport-buttons button:focus {
@@ -292,7 +358,7 @@ input::placeholder {
     <!-- الهيدر -->
     <header class="header">
         <a href="#" class="logo">
-            <img src="Images/logo1.png" alt="Logo">
+            <img src="logo1.png" alt="Logo">
         </a>
         <nav class="nav-links">
             <a href="#">الملف الشخصي</a>
@@ -301,7 +367,7 @@ input::placeholder {
             <a href="#">المواصلات</a>
         </nav>
         <a href="#" id="language-link">
-            <img src="Images/Language.png" alt="Language" id="language-icon">
+            <img src="Language.png" alt="Language" id="language-icon">
         </a>
     </header>
 
@@ -310,12 +376,18 @@ input::placeholder {
         <h2>وسائل النقل القريبه منك</h2>
 
         <div class="search-box">
+           <div class="input-container">
+    <input type="text" placeholder="نقطة الانطلاق" aria-label="نقطة الانطلاق">
+    <div class="location-markers">
+    <div class="marker marker-top"></div>
+    <div class="dashed-line"></div>
+    <div class="marker marker-bottom"></div>
+</div>
+</div>
+
             <div class="input-container">
-                <input type="text" placeholder="نقطة الانطلاق" aria-label="نقطة الانطلاق">
-            </div>
-            <button class="swap-btn">↕️</button>
-            <div class="input-container">
-                <input type="text" placeholder="أين وجهتك" aria-label="أين وجهتك">
+                <input type="text" placeholder="نقطة الوصول" aria-label="نقطه الوصول">
+                 
             </div>
         </div>
     </section>
@@ -362,3 +434,4 @@ input::placeholder {
 
 </body>
 </html>
+
