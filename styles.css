@@ -11,6 +11,9 @@ button{
     
 }
 
+
+
+
 /*h--------footer and header----------------------*/
 
 .header {
@@ -62,19 +65,21 @@ button{
 
 
 .footer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #0b0013;
-    color: white;
-    padding: 20px;
-    border: 1px solid #a144c9;
-    border-radius: 10px;
-    max-width: 100%;
-    text-align: center;
-    height: 150px;
-
+   
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #0b0013;
+        color: white;
+        padding: 20px;
+        border: 1px solid #a144c9;
+        border-radius: 10px;
+        max-width: 100%;
+        text-align: center;
+        height: 150px;
+        margin-top: auto; 
+    
 }
 .footer-logo img {
     width: 150px;
@@ -83,7 +88,9 @@ button{
 }
 .footer-section {
     flex: 1;
-    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .footer-icons {
     display: flex;
@@ -98,14 +105,14 @@ button{
 .social-icons { 
     display: flex; 
     flex-direction: row; 
-    justify-content: space-around;  
-    align-items:center; 
+    justify-content: center;  
+    align-items: center; 
     gap: 20px;  
     padding: 10px; 
-    position: absolute;  
-    bottom: 20px;  
-    left: 50%;   
-    transform: translateX(-50%);   
+    position: relative;
+    bottom: 0;  
+    left: 0;
+    transform: none;  
 }
 .social-link { 
     width: 30px;   
@@ -115,8 +122,7 @@ button{
     background-color: #bababa;  
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);   
     transition: transform 0.3s ease;   
-    position: relative;  
-    right: -25%; 
+    position: static; 
 } 
 .social-link:hover { 
     transform: scale(1.1);   
