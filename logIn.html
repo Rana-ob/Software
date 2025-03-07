@@ -110,7 +110,7 @@ body {
 button {
     width: 40%;
     padding: 14px;
-    background: linear-gradient(to left, #8e829f, #523d63);
+    background-color: #7d3be2;
     border: none;
     color: white;
     border-radius: 14px;
@@ -122,7 +122,7 @@ button {
 }
 
 button:hover{
-    background: #a144c9;
+    background: #5a28a5;
 }
 
 
@@ -279,7 +279,7 @@ p a {
 </head>
 <body>
     <header class="header">
-        <a href="#" class="logo">
+        <a href="homepage.html" class="logo">
             <img src="Images/logo1.png" alt="Logo" width="100" height="100"> 
         </a>
         <nav class="nav-links">
@@ -299,11 +299,30 @@ p a {
             </div>
             <br>
             <div class="form-box">
-                <form class="input-group">
-                    <input type="text" placeholder="اسم المستخدم" required>
-                    <input type="password" placeholder="الرمز السري" required>
-                    <p>ليس لديك حساب؟ <a href="#">إنشاء حساب</a></p>
+                <form class="input-group" id="loginForm">
+                    <input type="text" id="username" placeholder="اسم المستخدم" required>
+                    <input type="password" id="password" placeholder="الرمز السري" required>
+                    <p>ليس لديك حساب؟ <a href="NewAccount.html">إنشاء حساب</a></p>
                     <button type="submit">سجل الدخول</button>
+                </form>
+                <script>
+                    document.getElementById("loginForm").addEventListener("submit", function(event) {
+                        let username = document.getElementById("username").value.trim();
+                        let password = document.getElementById("password").value.trim();
+                        if (username === "" || password === "") {
+                            alert("الرجاء ملء جميع الحقول المطلوبة!");
+                            event.preventDefault();
+                        } else {
+                            event.preventDefault(); 
+                            setTimeout(function() {
+                                window.location.href = "homepage.html";
+                            }, 100);
+                        }
+                    });
+                </script>
+                
+                    
+                    
                 </form>
             </div>
         </div>
