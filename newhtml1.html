@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ar">
 <head>
@@ -7,7 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
     <style>
-        /* 🔹 خلفية الصفحة والخطوط */
+     
         body {
             background-color: #0d0b14;
             color: white;
@@ -17,24 +18,38 @@
             padding: 0;
         }
 
-        /* 🔹 الهيدر */
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 80px;
-            padding: 15px 30px;
-            background-color: #10021d;
-        }
+      
+       .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 15px 30px;
+    background-color: #10021d;
+    flex-direction: row-reverse; /* لتغيير ترتيب العناصر بحيث يكون اللوجو على اليمين واللغة على اليسار */
+}
 
-        .logo {
-            display: flex;
-            align-items: center;
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
-            text-decoration: none;
-        }
+/* 🔹 اللوجو */
+.logo {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+#language-link {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+}
+
+#language-link img {
+    width: 40px;
+    height: 35px;
+}
 
         .logo img {
             width: 100px;
@@ -42,10 +57,7 @@
             object-fit: contain;
         }
 
-        #language-link img {
-            width: 40px;
-            height: 35px;
-        }
+      
 
         .nav-links {
             display: flex;
@@ -124,7 +136,7 @@
     align-items: center;
 }
 
-/* 🔹 العلامة العلوية (بيضاء مع نقطة سوداء) */
+
 .marker-top {
     border: 2px solid white;
     background-color: transparent;
@@ -282,21 +294,20 @@ input::placeholder {
         .destination-section {
             margin-top: 30px;
         }
-         .footer {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #0b0013;
-            color: white;
-            padding: 20px;
-            border: 1px solid #a144c9;
-            border-radius: 10px;
-            max-width: 100%;
-            text-align: center;
-            height: 150px;
-            margin-top: auto;
-        }
+        .footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0b0013;
+    color: white;
+    padding: 20px;
+    border: 1px solid #a144c9;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+    margin-top:10%; 
+}
 
         .footer-logo img {
             width: 150px;
@@ -323,42 +334,37 @@ input::placeholder {
             font-size: 20px;
         }
 
-        .social-icons { 
-            display: flex; 
-            flex-direction: row; 
-            justify-content: center;  
-            align-items: center; 
-            gap: 20px;  
-            padding: 10px; 
-            position: relative;
-            bottom: 0;  
-            left: 0;
-            transform: none;  
+        .social-icons {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding: 10px;
         }
 
-        .social-link { 
-            width: 30px;   
-            height: 30px; 
-            border-radius: 50%;  
-            padding: 10px;  
-            background-color: #bababa;  
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);   
-            transition: transform 0.3s ease;   
-            position: static; 
-        } 
+        .social-link {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            padding: 10px;
+            background-color: #bababa;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
 
-        .social-link:hover { 
-            transform: scale(1.1);   
-            background-color: #f0eded; 
+        .social-link:hover {
+            transform: scale(1.1);
+            background-color: #f0eded;
         }
     </style>
 </head>
 <body>
 
-    <!-- الهيدر -->
+    
     <header class="header">
         <a href="#" class="logo">
-            <img src="logo1.png" alt="Logo">
+            <img src="Images/logo1.png" alt="Logo">
         </a>
         <nav class="nav-links">
             <a href="#">الملف الشخصي</a>
@@ -367,12 +373,13 @@ input::placeholder {
             <a href="#">المواصلات</a>
         </nav>
         <a href="#" id="language-link">
-            <img src="Language.png" alt="Language" id="language-icon">
+            <img src="Images/Language.png" alt="Language" id="language-icon">
         </a>
     </header>
 
-    <!-- قسم إدخال نقطة الانطلاق والوجهة -->
+
     <section class="destination-section">
+        <br>
         <h2>وسائل النقل القريبه منك</h2>
 
         <div class="search-box">
@@ -392,19 +399,18 @@ input::placeholder {
         </div>
     </section>
 
-    <!-- قسم الخريطة -->
     <section class="map-container">
-        <img src="jana sa11.jpg" alt="خريطة النقل توضح وسائل النقل المتاحة في منطقتك" style="max-width: 100%; height: auto;">
+        <img src="Images/jana sa11.png" alt="خريطة النقل توضح وسائل النقل المتاحة في منطقتك" style="max-width: 100%; height: auto;">
     </section>
 
-    <!-- قسم أزرار النقل العام -->
+   
     <section class="transport-buttons">
         <button class="bus-btn">🚌 Bus</button>
         <span class="separator"></span>
         <button class="metro-btn">🚇 Metro</button>
     </section>
 
-    <!-- قسم وسائل النقل الخاصة -->
+  
     <section class="private-transport">
         <h2>حدد وسيلة النقل الخاصة بك</h2>
         <div class="transport-options">
@@ -434,4 +440,7 @@ input::placeholder {
 
 </body>
 </html>
+
+
+
 
