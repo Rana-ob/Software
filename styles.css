@@ -184,13 +184,16 @@ button{
     margin-bottom: 10px;
 }
 .match-card button {
-    background: #6a0dad;
+    font-family: 'Almarai', sans-serif;
+    background-color: #6a0dad;
     color: white;
     border: none;
-    padding: 10px;
+    padding: 10px 20px;
     cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .about {
