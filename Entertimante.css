@@ -186,44 +186,56 @@ nav a {
     padding: 20px;
     border: 1px solid #a144c9;
     border-radius: 10px;
-    max-width: 100%;
     text-align: center;
-    height: 150px;
-    margin-top: auto;
+    width: 100%; 
+    margin-top: auto; 
 }
+        .footer-logo img {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+        }
 
-.footer-logo img {
-    width: 150px;
-    height: 150px;
-    object-fit: contain;
-}
+        .footer-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-.footer-section {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        .footer-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
 
-.social-icons { 
-    display: flex; 
-    justify-content: center;  
-    align-items: center; 
-    gap: 20px;  
-    padding: 10px;
-}
+        .footer-icons a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+        }
 
-.social-link { 
-    width: 30px;   
-    height: 30px; 
-    border-radius: 50%;  
-    padding: 10px;  
-    background-color: #bababa;  
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);   
-    transition: transform 0.3s ease;   
-}
+        .social-icons {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding: 10px;
+        }
 
-.social-link:hover { 
-    transform: scale(1.1);   
-    background-color: #f0eded; 
-}
+
+.social-link {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            padding: 10px;
+            background-color: #bababa;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: scale(1.1);
+            background-color: #f0eded;
+        }
