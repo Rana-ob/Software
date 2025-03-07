@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family:'Almarai', sans-serif;
     background-color: #0a0213;
     color: white;
     margin: 0;
@@ -45,16 +45,86 @@ nav a {
     border-radius: 20px;
 }
 
-/* Manually set grid positions */
-.city:nth-child(1) { grid-column: 1; grid-row: 1; } /* أبها */
-.city:nth-child(2) { grid-column: 2; grid-row: 1; } /* الطائف */
-.city:nth-child(3) { grid-column: 3; grid-row: 1; } /* الرياض */
-.city:nth-child(4) { grid-column: 1; grid-row: 2; } /* نيوم */
-.city:nth-child(5) { grid-column: 2; grid-row: 2; } /* جدة */
+/* Manually set grid positions 
+.city:nth-child(1) { grid-column: 1; grid-row: 1; } /* أبها 
+.city:nth-child(2) { grid-column: 2; grid-row: 1; } /* الطائف 
+.city:nth-child(3) { grid-column: 3; grid-row: 1; } /* الرياض 
+.city:nth-child(4) { grid-column: 1; grid-row: 2; } /* نيوم 
+.city:nth-child(5) { grid-column: 2; grid-row: 2; } /* جدة 
 .city:nth-child(6) { grid-column: 3; grid-row: 2; } /* الخبر */
+.city:nth-child(1) { grid-column: span 2; grid-row: span 1; } /* أبها - wider */
+.city:nth-child(2) { grid-column: span 1; grid-row: span 2; } /* الطائف - taller */
+.city:nth-child(3) { grid-column: span 2; grid-row: span 1; } /* الرياض - normal */
+.city:nth-child(4) { grid-column: span 2; grid-row: span 2; } /* نيوم - bigger */
+.city:nth-child(5) { grid-column: span 1; grid-row: span 1; } /* جدة - normal */
+.city:nth-child(6) { grid-column: span 1; grid-row: span 1; } /* الخبر - normal */
+
 
 .info {
     margin-top: 20px;
+    text-align: center;
+    padding: 50px;
+    color: white;
+    font-size: 20px;
+}
+
+.info-R h2 {
+    color: #33cc33; 
+    font-size: 30px;
+    font-weight: bold;
+}
+.info-J h2{
+    color: #33cc33; 
+    font-size: 30px;
+    font-weight: bold;
+}
+.info-K h2{
+    color: #33cc33; 
+    font-size: 30px;
+    font-weight: bold;
+}
+.info-A h2{
+    color: #33cc33; 
+    font-size: 30px;
+    font-weight: bold;
+}
+.info-N h2{
+    color: #33cc33; 
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.info-R p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+.info-J p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+.info-K p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+.info-N p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+.info-A p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+/* Styled "مناطق التشجيع" button */
+.info-R .section-title {
+    display: inline-block;
+    padding: 20px 30px;
+    font-size: 30px;
+    font-weight: bold;
+    border: 2px solid #b08d57; /* Gold border */
+    border-radius: 20px;
+    color: white;
+    background: transparent;
+    margin-bottom: 0px;
 }
 
 /* Header */
@@ -156,4 +226,4 @@ nav a {
 .social-link:hover { 
     transform: scale(1.1);   
     background-color: #f0eded; 
-} 
+}
