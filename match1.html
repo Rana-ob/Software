@@ -6,7 +6,6 @@
     <title>Hayyakm2034</title>
     <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
     <style>
-
         body {
     font-family: 'Almarai', sans-serif;
     background-color: #0a0213;
@@ -161,7 +160,6 @@
     border-radius: 8px;
     font-size: 18px;
     right: 1px;
-    font-family: 'Almarai', sans-serif;
 }
 
 .btn-book:hover {
@@ -180,16 +178,13 @@
             padding: 10px 20px;
             color: white;
             font-size: 18px;
-            font-family: 'Almarai', sans-serif;
         }
 
         .search-container img {
     width: 25px;
     cursor: pointer;
 }
-
     
-
 .matches {
             display: flex;
             justify-content: center;
@@ -222,7 +217,6 @@
             cursor: pointer;
             border-radius: 5px;
             font-size: 16px;
-            font-family: 'Almarai', sans-serif;
         }
 
         .match-card button:hover {
@@ -242,7 +236,8 @@
         }
 
         .bookmark.active {
-            background-image: url('Images/bookmark-white.png'); 
+            background-image: url('Images/bookmark-white.png'); /* صورة جديدة عند الحفظ */
+        }
         }
 
         .bookmark:hover {
@@ -265,8 +260,8 @@
             <img src="Images/logo1.png" alt="Logo" width="100" height="100"> 
         </a>
         <nav class="nav-links">
-            <a href="NewAccount.html">حساب جديد  </a>
-            <a href="logIn.html">تسجيل دخول </a>
+            <a href="#">حساب جديد  </a>
+            <a href="#">تسجيل دخول </a>
             <!--
             <a href="#">مباريات</a>
             <a href="#">ترفية ومناطق التشجيع</a>
@@ -313,6 +308,12 @@
             <button>احجز الآن</button>
         </div>
     </div>
+
+    <script>
+        function toggleBookmark(element) {
+            element.classList.toggle('active');
+        }
+    </script>
     <br> <br><br>
 
     <footer class="footer">
