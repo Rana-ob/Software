@@ -214,6 +214,15 @@ p a {
 
 .nav-links a:hover {
     background: rgba(255, 255, 255, 0.1);
+
+div {
+    margin: 10px 0;
+}
+
+label {
+    margin-left: 15px;
+    font-size: 16px;
+}
 }.footer {
     display: flex;
     flex-wrap: wrap;
@@ -304,6 +313,14 @@ p a {
                 <form class="input-group" id="loginForm">
                     <input type="text" id="username" placeholder="اسم المستخدم" required>
                     <input type="password" id="password" placeholder="الرمز السري" required>
+                    <div class="user-type">
+                        <label>
+                            مدير <input type="radio" name="userType" value="admin" required>
+                        </label>
+                        <label>
+                            زائر <input type="radio" name="userType" value="guest">
+                        </label>
+                    </div>
                     <p>ليس لديك حساب؟ <a href="NewAccount.html">إنشاء حساب</a></p>
                     <button type="submit">سجل الدخول</button>
                 </form>
