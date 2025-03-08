@@ -287,7 +287,7 @@
         <div class="match-card">
             <div class="bookmark" onclick="toggleBookmark(this)"></div>
             <img src="Images/ksa.png" alt="السعودية vs البرتغال">
-            <button>احجز الآن</button>
+            <button id="buttonn">احجز الآن</button>
         </div>
         <div class="match-card">
             <div class="bookmark" onclick="toggleBookmark(this)"></div>
@@ -314,6 +314,9 @@
         function toggleBookmark(element) {
             element.classList.toggle('active');
         }
+        document.getElementById("buttonn").addEventListener("click", function(event) {
+                                window.location.href = "match2.html";
+                            }, 100);
     </script>
     <br> <br><br>
 
