@@ -31,6 +31,17 @@
                     <input type="email" placeholder="البريد الإلكتروني" required>
                     <input type="text" placeholder="اسم المستخدم" required>
                     <input type="password" placeholder="الرمز السري" required>
+
+                       <!-- Radio Buttons for User Type -->
+                       <div class="user-type">
+                        <label>
+                            مدير <input type="radio" name="userType" value="admin" required>
+                        </label>
+                        <label>
+                            زائر <input type="radio" name="userType" value="guest">
+                        </label>
+                    </div>
+
                     <button type="submit">إنشاء الحساب</button>
                 </form>
                 <p>لديك حساب؟ <a href="logIn.html">سجل الدخول</a></p>
