@@ -1,0 +1,353 @@
+   @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&display=swap');
+body {
+    font-family: 'Almarai', sans-serif;
+    background-color: #0a0213;
+    color: white;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+button{
+    font-family: 'Almarai', sans-serif;
+    
+}
+
+
+
+  
+/*h--------footer and header----------------------*/
+
+.header {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background-color:  #10021d;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.logo img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    
+}
+#language-link img{
+    width: 40px;
+    height: 35px;
+
+}
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 20px;
+    transition: background 0.3s ease;
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+
+.footer {
+   
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #0b0013;
+        color: white;
+        padding: 20px;
+        border: 1px solid #a144c9;
+        border-radius: 10px;
+        max-width: 100%;
+        text-align: center;
+        height: 150px;
+        margin-top: auto; 
+    
+}
+.footer-logo img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+.footer-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+.footer-icons a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+.social-icons { 
+    display: flex; 
+    flex-direction: row; 
+    justify-content: center;  
+    align-items: center; 
+    gap: 20px;  
+    padding: 10px; 
+    position: relative;
+    bottom: 0;  
+    left: 0;
+    transform: none;  
+}
+.social-link { 
+    width: 30px;   
+    height: 30px; 
+    border-radius: 50%;  
+    padding: 10px;  
+    background-color: #bababa;  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);   
+    transition: transform 0.3s ease;   
+    position: static; 
+} 
+.social-link:hover { 
+    transform: scale(1.1);   
+    background-color: #f0eded; 
+} 
+
+
+ h2 {
+            font-size: 1.8rem;
+            margin-bottom: 35px;
+            text-align: right; /* محاذاة العنوان إلى اليمين */
+            padding-right: 10px; /* إضافة مسافة داخلية من الجهة اليمنى */
+        }
+
+        /* 🔹 صندوق البحث */
+        .search-box {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+            max-width: 350px;
+            margin: auto;
+            text-align: right;
+        }
+
+        .input-container {
+            display: flex;
+            align-items: center;
+            background: #2a223a;
+            padding: 12px;
+            border-radius: 15px;
+            width: 100%;
+            position: relative;
+        }
+
+        .input-container input {
+            background: none;
+            border: none;
+            color: white;
+            width: 100%;
+            padding: 5px;
+            font-size: 16px;
+            outline: none;
+        }
+/* 🔹 تحديد موقع العلامات على الجانب الأيمن */
+.location-markers {
+    position: absolute;
+    right: -30px;
+    top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+/* 🔹 شكل الدوائر */
+.marker {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.marker-top {
+    border: 2px solid white;
+    background-color: transparent;
+    position: relative;
+}
+
+.marker-top::after {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background-color: white;
+    border-radius: 50%;
+    display: block;
+}
+
+/* 🔹 الخط المتقطع */
+.dashed-line {
+    width: 2px;
+    height: 25px;
+    background: repeating-linear-gradient(
+        to bottom,
+        white,
+        white 4px,
+        transparent 4px,
+        transparent 8px
+    );
+}
+
+/* 🔹 العلامة السفلية (بنفسجية) */
+.marker-bottom {
+    border: 2px solid #a855f7;
+    background-color: transparent;
+    position: relative;
+}
+
+.marker-bottom::after {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background-color: #a855f7;
+    border-radius: 50%;
+    display: block;
+}
+        /* 🔹 زر تبديل الاتجاهات */
+        .swap-btn {
+            background: none;
+            border: 2px solid #5a2d91;
+            color: #5a2d91;
+            padding: 8px 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s;
+            display: block;
+            margin: 20px auto;
+        }
+
+        .swap-btn:hover {
+            background: #5a2d91;
+            color: white;
+        }
+
+        /* 🔹 الخريطة */
+        .map-container {
+            margin: 20px auto;
+            max-width: 350px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid #5a2d91;
+        }
+
+        .map-container img {
+            width: 100%;
+            border-radius: 12px;
+        }
+
+        /* 🔹 أزرار النقل العام */
+    .transport-buttons {
+            display: flex;
+            justify-content: space-between; /* توزيع الأزرار بالتساوي */
+            margin-top: 20px;
+            background: #2a223a; /* خلفية مستطيلة واحدة */
+            padding: 2px;
+            border-radius: 15px;
+            width: 300px; /* عرض ثابت للمستطيل */
+            margin: 20px auto;
+        }
+
+        .transport-buttons button {
+            background: #5a2d91;
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+            flex: 1; /* يجعل الأزرار تأخذ نفس الحجم */
+            text-align: center;
+        }
+
+        .transport-buttons button:hover {
+            background: #7d3bb8;
+        }
+ .separator {
+        width: 1px;
+        height: 40px;
+        background-color: white;
+        margin: 0 10px;
+    }
+        /* 🔹 تمييز الزر المُختار عند الضغط */
+        .transport-buttons button:active {
+            background: #7d3bb8; /* اللون المُنار */
+        }
+        
+        
+
+        /* 🔹 تمييز الزر عند التركيز عليه (لمزيد من التفاعل) */
+        .transport-buttons button:focus {
+            background: #7d3bb8;
+            outline: none;
+        }
+        /* 🔹 وسائل النقل الخاصة */
+        .private-transport {
+            margin-top: 40px;
+        }
+
+        .transport-options {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .option {
+            background: #1e1b29;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            width: 90px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.3s;
+            border: 2px solid #5a2d91;
+        }
+
+        .option:hover {
+            background: #3a2f50;
+            border-color: #7d3bb8;
+        }
+/* تعديل مكان الـ placeholder إلى اليمين */
+input::placeholder {
+    /* لون أرجواني فاتح */
+    text-align: right; /* محاذاة النص إلى اليمين */
+}
+
+        .destination-section {
+            margin-top: 30px;
+
+        }
+        
+
+   
