@@ -191,37 +191,69 @@
     
 
 .matches {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    padding: 20px;
-}
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
 
-.match-card {
-    background: #1d072fc2;
-    padding: 20px;
-    border-radius: 10px;
-    width: 260px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-.match-card img {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-.match-card button {
-    background: #6a0dad;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-    font-family: 'Almarai', sans-serif;
-}
-.match-card button:hover {
-    background: #a77acb;    
-}
+        .match-card {
+            background: #1d072fc2;
+            padding: 20px;
+            border-radius: 10px;
+            width: 360px;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .match-card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .match-card button {
+            background: #6a0dad;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            font-family: 'Almarai', sans-serif;
+        }
+
+        .match-card button:hover {
+            background: #a77acb;    
+        }
+
+        .bookmark {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            background-image: url('Images/bookmark.png');
+            background-size: cover;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .bookmark.active {
+            background-image: url('Images/bookmark-white.png'); 
+        }
+
+        .bookmark:hover {
+            transform: scale(1.2);
+            opacity: 0.8;
+        }
+
+        h2 {
+            text-align: right;
+            margin-right: 500px;
+        }
 
     </style>
 
@@ -254,28 +286,30 @@
         <img src="Images/search-icon.png" alt="بحث">
     </div>
   
+    <h2>مجموعة ١</h2>
     <div class="matches">
         <div class="match-card">
+            <div class="bookmark" onclick="toggleBookmark(this)"></div>
             <img src="Images/ksa.png" alt="السعودية vs البرتغال">
-          
             <button>احجز الآن</button>
         </div>
         <div class="match-card">
+            <div class="bookmark" onclick="toggleBookmark(this)"></div>
             <img src="Images/englandd.png" alt="إنجلترا vs المانيا">
-          
             <button>احجز الآن</button>
         </div>
     </div>
 
+    <h2>مجموعة ٢</h2>
     <div class="matches">
         <div class="match-card">
+            <div class="bookmark" onclick="toggleBookmark(this)"></div>
             <img src="Images/irann.png" alt="ايران vs الارجنتين">
-          
             <button>احجز الآن</button>
         </div>
         <div class="match-card">
+            <div class="bookmark" onclick="toggleBookmark(this)"></div>
             <img src="Images/italyy.png" alt="اوروغواي vs ايطاليا">
-          
             <button>احجز الآن</button>
         </div>
     </div>
