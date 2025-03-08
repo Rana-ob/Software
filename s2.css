@@ -315,24 +315,28 @@ button{
             margin-top: 40px;
         }
 
-        .transport-options {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
+     .transport-options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* السماح بتغليف العناصر في حال الحاجة */
+    gap: 15px;
+    margin-top: 20px;
+}
 
-        .option {
-            background: #1e1b29;
-            padding: 15px;
-            border-radius: 12px;
-            text-align: center;
-            width: 90px;
-            font-size: 14px;
-            cursor: pointer;
-            transition: 0.3s;
-            border: 2px solid #5a2d91;
-        }
+.option {
+    background: #1e1b29;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    width: 100px; /* زيادة العرض قليلاً */
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 2px solid #5a2d91;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
         .option:hover {
             background: #3a2f50;
