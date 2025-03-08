@@ -315,8 +315,10 @@
             element.classList.toggle('active');
         }
         document.getElementById("buttonn").addEventListener("click", function(event) {
-                                window.location.href = "match2.html";
-                            }, 100);
+            setTimeout(function() {
+             window.location.href = "match2.html";
+             }, 100);
+            });
     </script>
     <br> <br><br>
 

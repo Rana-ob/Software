@@ -258,9 +258,12 @@
         <br>
         <button class="confirm-btn" id="buttonn">تأكيد الحجز</button>
         <script>
-            document.getElementById("buttonn").addEventListener("click", function(event) {
-                        window.location.href = "homepage.html";
-                    }, 100);
+           document.getElementById("buttonn").addEventListener("click", function(event) {
+            setTimeout(function() {
+             window.location.href = "homepage.html";
+             }, 100);
+            });
+
         </script>
     </div>
     
