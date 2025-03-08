@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family:'Almarai', sans-serif;
     background-color: #0a0213;
     color: white;
     margin: 0;
@@ -45,26 +45,89 @@ nav a {
     border-radius: 20px;
 }
 
-/* Set specific sizes for certain images to match the layout */
-.city:nth-child(1) { grid-column: span 2; height: 200px; width: 150px; } /* الرياض */
-.city:nth-child(2) { grid-column: span 1; height: 200px;width: 150px } /* أبها */
-.city:nth-child(3) { grid-column: span 1; height: 200px;width: 150px } /* نيوم */
-.city:nth-child(4) { grid-column: span 1; height: 200px;width: 150px } /* جدة */
-.city:nth-child(5) { grid-column: span 1; height: 200px;width: 150px } /* الخبر */
-.city:nth-child(6) { grid-column: span 1; height: 200px;width: 150px } /* الطائف */
+/* Manually set grid positions 
+.city:nth-child(1) { grid-column: 1; grid-row: 1; } /* أبها 
+.city:nth-child(2) { grid-column: 2; grid-row: 1; } /* الطائف 
+.city:nth-child(3) { grid-column: 3; grid-row: 1; } /* الرياض 
+.city:nth-child(4) { grid-column: 1; grid-row: 2; } /* نيوم 
+.city:nth-child(5) { grid-column: 2; grid-row: 2; } /* جدة 
+.city:nth-child(6) { grid-column: 3; grid-row: 2; } /* الخبر */
+.city:nth-child(1) { grid-column: span 2; grid-row: span 1; } /* أبها - wider */
+.city:nth-child(2) { grid-column: span 1; grid-row: span 2; } /* الطائف - taller */
+.city:nth-child(3) { grid-column: span 2; grid-row: span 1; } /* الرياض - normal */
+.city:nth-child(4) { grid-column: span 2; grid-row: span 2; } /* نيوم - bigger */
+.city:nth-child(5) { grid-column: span 1; grid-row: span 1; } /* جدة - normal */
+.city:nth-child(6) { grid-column: span 1; grid-row: span 1; } /* الخبر - normal */
+
 
 .info {
     margin-top: 20px;
+    text-align: center;
+    padding: 50px;
+    color: white;
+    font-size: 20px;
 }
 
-/*footer {
-    margin-top: 50px;
-    background: #1a1625;
-    padding: 10px;
+.info-R h2 {
+    color: #33cc33; 
+    font-size: 30px;
+    font-weight: bold;
+}
+.info-J h2{
+    color: #33cc33; 
+    font-size: 30px;
+    font-weight: bold;
+}
+.info-K h2{
+    color: #33cc33; 
+    font-size: 30px;
+    font-weight: bold;
+}
+.info-A h2{
+    color: #33cc33; 
+    font-size: 30px;
+    font-weight: bold;
+}
+.info-N h2{
+    color: #33cc33; 
+    font-size: 30px;
+    font-weight: bold;
 }
 
-/*h--------footer and header----------------------*/
+.info-R p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+.info-J p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+.info-K p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+.info-N p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+.info-A p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+/* Styled "مناطق التشجيع" button */
+.info-R .section-title {
+    display: inline-block;
+    padding: 20px 30px;
+    font-size: 30px;
+    font-weight: bold;
+    border: 2px solid #b08d57; /* Gold border */
+    border-radius: 20px;
+    color: white;
+    background: transparent;
+    margin-bottom: 0px;
+}
 
+/* Header */
 .header {
     display: flex;
     align-items: center;
@@ -87,13 +150,13 @@ nav a {
     width: 200px;
     height: 200px;
     object-fit: contain;
-    
 }
-#language-link img{
+
+#language-link img {
     width: 40px;
     height: 35px;
-
 }
+
 .nav-links {
     display: flex;
     gap: 20px;
@@ -112,69 +175,67 @@ nav a {
     background: rgba(255, 255, 255, 0.1);
 }
 
-
+/* Footer */
 .footer {
-   
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        background-color: #0b0013;
-        color: white;
-        padding: 20px;
-        border: 1px solid #a144c9;
-        border-radius: 10px;
-        max-width: 100%;
-        text-align: center;
-        height: 150px;
-        margin-top: auto; 
-    
-}
-.footer-logo img {
-    width: 150px;
-    height: 150px;
-    object-fit: contain;
-}
-.footer-section {
-    flex: 1;
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
-}
-.footer-icons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-.footer-icons a {
+    background-color: #0b0013;
     color: white;
-    text-decoration: none;
-    font-size: 20px;
+    padding: 20px;
+    border: 1px solid #a144c9;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%; 
+    margin-top: auto; 
 }
-.social-icons { 
-    display: flex; 
-    flex-direction: row; 
-    justify-content: center;  
-    align-items: center; 
-    gap: 20px;  
-    padding: 10px; 
-    position: relative;
-    bottom: 0;  
-    left: 0;
-    transform: none;  
-}
-.social-link { 
-    width: 30px;   
-    height: 30px; 
-    border-radius: 50%;  
-    padding: 10px;  
-    background-color: #bababa;  
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);   
-    transition: transform 0.3s ease;   
-    position: static; 
-} 
-.social-link:hover { 
-    transform: scale(1.1);   
-    background-color: #f0eded; 
-} 
+        .footer-logo img {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+        }
 
+        .footer-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .footer-icons a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding: 10px;
+        }
+
+
+.social-link {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            padding: 10px;
+            background-color: #bababa;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: scale(1.1);
+            background-color: #f0eded;
+        }

@@ -2,7 +2,7 @@
 body {
     background-color: #0d0b14;
     color: white;
-    font-family: Arial, sans-serif;
+    font-family: 'Almarai', sans-serif;
     display: flex;
     flex-direction: column; /* Stack header, main content, and footer vertically */
     justify-content: center;
@@ -170,7 +170,9 @@ p a {
 
 .nav-links a:hover {
     background: rgba(255, 255, 255, 0.1);
-}.footer {
+}
+
+.footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;

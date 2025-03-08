@@ -1,0 +1,220 @@
+   @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&display=swap');
+body {
+    font-family: 'Almarai', sans-serif;
+    background-color: #0a0213;
+    color: white;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+button{
+    font-family: 'Almarai', sans-serif;
+    
+}
+
+
+
+
+/*h--------footer and header----------------------*/
+
+.header {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background-color:  #10021d;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.logo img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    
+}
+#language-link img{
+    width: 40px;
+    height: 35px;
+
+}
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 20px;
+    transition: background 0.3s ease;
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+
+.footer {
+   
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #0b0013;
+        color: white;
+        padding: 20px;
+        border: 1px solid #a144c9;
+        border-radius: 10px;
+        max-width: 100%;
+        text-align: center;
+        height: 150px;
+        margin-top: auto; 
+    
+}
+.footer-logo img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+.footer-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+.footer-icons a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+.social-icons { 
+    display: flex; 
+    flex-direction: row; 
+    justify-content: center;  
+    align-items: center; 
+    gap: 20px;  
+    padding: 10px; 
+    position: relative;
+    bottom: 0;  
+    left: 0;
+    transform: none;  
+}
+.social-link { 
+    width: 30px;   
+    height: 30px; 
+    border-radius: 50%;  
+    padding: 10px;  
+    background-color: #bababa;  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);   
+    transition: transform 0.3s ease;   
+    position: static; 
+} 
+.social-link:hover { 
+    transform: scale(1.1);   
+    background-color: #f0eded; 
+} 
+
+
+.container {
+            max-width: 400px;
+            margin: auto;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .transport-options {
+            background: #2C2A3A;
+            padding: 15px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .input-box {
+            background: #0D0C1D;
+            color: white;
+            border: 1px solid #9333EA;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+ .map {
+    background-image: url('Images/jana sa11.jpg'); /* تأكد من أن المسار صحيح */
+    background-size: cover;  /* لتكبير الصورة لتغطي العنصر بالكامل */
+    background-position: center; /* لضبط الصورة في المركز */
+    background-repeat: no-repeat; /* لمنع تكرار الصورة */
+    width: 90%;  /* تصغير العرض */
+    height: 250px;  /* زيادة الارتفاع قليلاً */
+    border-radius: 15px;
+    margin-bottom: 15px;
+    margin: 0 auto; /* لتحسين محاذاة العنصر */
+}
+
+
+        .transport-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .transport-buttons button {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .bus { background: #6A0DAD; color: white; }
+        .metro { background: #4B0082; color: white; }
+
+        .personal-transport {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .transport-card {
+            background: #2C2A3A;
+            padding: 10px;
+            border-radius: 10px;
+            width: 80px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .transport-card img {
+            width: 50px;
+            height: 50px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 90%;
+            }
+        }

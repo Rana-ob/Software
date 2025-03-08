@@ -9,17 +9,14 @@
 </head>
 <body>
     <header class="header">
-        <a href="#" class="logo">
+        <a href="homepage.html" class="logo">
             <img src="Images/logo1.png" alt="Logo" width="100" height="100"> 
         </a>
         <nav class="nav-links">
-            <a href="#"> الصفحة الرئيسية  </a>
-           
-                   
-
-<a href ="#" id="language-link">
-    <img src="Images/Language.png" alt="Language" id="language-icon">
-</a>        </nav>
+            <a href="homepage.html"> الصفحة الرئيسية  </a>
+            <a href ="#" id="language-link">
+             <img src="Images/Language.png" alt="Language" id="language-icon"></a>     
+        </nav>
     </header>
 
     <div class="wrapper">
@@ -29,17 +26,34 @@
                 <h1>حساب جديد</h1>
             </div>
             <div class="form-box">
-                <form class="input-group">
-                    <input type="text" placeholder="الاسم الكامل" required>
-                    <input type="email" placeholder="البريد الإلكتروني" required>
-                    <input type="text" placeholder="اسم المستخدم" required>
-                    <input type="password" placeholder="الرمز السري" required>
+                <form class="input-group" id="registerForm">
+                    <input type="text" id="fullName" placeholder="الاسم الكامل" required>
+                    <input type="email" id="email" placeholder="البريد الإلكتروني" required>
+                    <input type="text" id="username" placeholder="اسم المستخدم" required>
+                    <input type="password" id="password" placeholder="الرمز السري" required>
                     <button type="submit">إنشاء الحساب</button>
                 </form>
-                <p>لديك حساب؟ <a href="#">سجل الدخول</a></p>
+                <p>لديك حساب؟ <a href="logIn.html">سجل الدخول</a></p>
             </div>
         </div>
-
+        <script>
+            document.getElementById("registerForm").addEventListener("submit", function(event) {
+                let fullName = document.getElementById("fullName").value.trim();
+                let email = document.getElementById("email").value.trim();
+                let username = document.getElementById("username").value.trim();
+                let password = document.getElementById("password").value.trim();
+                
+                if (fullName === "" || email === "" || username === "" || password === "") {
+                    alert("الرجاء ملء جميع الحقول المطلوبة!");
+                    event.preventDefault();
+                } else {
+                    event.preventDefault(); 
+                    setTimeout(function() {
+                        window.location.href = "homepage.html";
+                    }, 100);
+                }
+            });
+        </script>
         <!-- Photo on the right (separated from the box) -->
         <div class="image-box">
             <img src="Images/NewAccount.jpeg" alt="Profile Image">

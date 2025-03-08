@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>تأكيد الحجز</title>
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0a0213;
+    color: white;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: 'Almarai', sans-serif;
+
+        }
+        .container {
+            border: 1px solid #8a2be2;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+            background-color: #150020;
+            position: relative;
+        }
+        .title {
+            text-align: right;
+            margin: 0;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .seat-btn {
+            background-color: #4c2b5e;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-family: 'Almarai', sans-serif;
+        }
+        .seat-btn:hover {
+            background-color: #8a2be2;
+        }
+        .silver-label {
+            color: gold;
+            font-size: 16px;
+            font-weight: bold;
+            position: absolute;
+            top: 50px;
+            right: 17px;
+
+            text-align: right;
+            margin: 0;
+         
+        }
+        .seat-view img {
+            width: 100%;
+            border-radius: 10px;
+            border: 2px solid #8a2be2;
+        }
+        .price {
+            color: gold;
+            font-size: 18px;
+            font-weight: bold;
+           
+
+            top: 50px;
+            right: 17px;
+
+            text-align: right;
+            margin: 0;
+        }
+        .checkbox-container {
+          
+            gap: 10px;
+          
+            font-size: 16px;
+
+            top: 50px;
+            right: 17px;
+
+            text-align: right;
+            margin: 0;
+            
+        }
+        .checkbox-container input {
+            width: 18px;
+            height: 18px;
+        }
+        .confirm-btn {
+            background-color: #8a2be2;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            font-family: 'Almarai', sans-serif;
+        
+        }
+        .confirm-btn:hover {
+            background-color: #a14ae3;
+        }
+        .header {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background-color:  #10021d;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.logo img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    
+}
+#language-link img{
+    width: 40px;
+    height: 35px;
+
+}
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 20px;
+    transition: background 0.3s ease;
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0b0013;
+    color: white;
+    padding: 20px;
+    border: 1px solid #a144c9;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+    margin-top: 30%; 
+}
+
+        .footer-logo img {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+        }
+
+        .footer-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .footer-icons a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding: 10px;
+        }
+
+        .social-link {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            padding: 10px;
+            background-color: #bababa;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: scale(1.1);
+            background-color: #f0eded;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="homepage.html" class="logo">
+            <img src="Images/logo1.png" alt="Logo" width="100" height="100"> 
+        </a>
+        <nav class="nav-links">
+    
+            <a href="newhtml77.html">الملف الشخصي </a>
+            <a href="match_1.html">مباريات</a>
+            <a href="Entertimante.html">ترفية ومناطق التشجيع</a>
+            <a href="newhtml1.html">المواصلات</a>
+
+<a href ="#" id="language-link">
+    <img src="Images/Language.png" alt="Language" id="language-icon">
+</a>        </nav>
+    </header>
+    <br>
+    <br>
+    <div class="container">
+        <h2 class="title">رؤية من مقعدك :</h2>
+        <button class="seat-btn">3D Seat</button>
+        
+        <br>
+        <br>
+        <span class="silver-label">SILVER</span>
+        <div class="seat-view">
+            <img src="Images/seatview.jpeg" alt="رؤية المقعد">
+        </div>
+        <br>
+        <br>
+        <p class="price">مجموع السعر: <span style="color: white;">300 ر.س</span></p>
+        <br>
+        <br>
+        <div class="checkbox-container">
+            <input type="checkbox" checked>
+            <label style="font-size: 18px;">مساعدة خاصة</label>
+        </div>
+        <br>
+        <br>
+        <button class="confirm-btn" id="buttonn">تأكيد الحجز</button>
+        <script>
+           document.getElementById("buttonn").addEventListener("click", function(event) {
+            setTimeout(function() {
+             window.location.href = "homepage.html";
+             }, 100);
+            });
+
+        </script>
+    </div>
+    
+    <footer class="footer">
+        <div class="footer-section footer-logo">
+            <img src="Images/logo1.png" alt="Hayyakm 2034">
+        </div>
+        <div class="footer-section">Contact</div>
+        <div class="footer-section">Hayyakm2034@gmail.com</div>
+        <div class="footer-section">Services</div>
+            <div class="footer-section social-icon">
+                <img src="Images/WhatsApp.png" alt="WhatsApp" class="social-link">
+                <img src="Images/Tiktok.png" alt="Tiktok" class="social-link">
+                <img src="Images/x.png" alt="Snapchat" class="social-link">
+                <img src="Images/facebook.png" alt="Instagram" class="social-link">
+            </div>
+        <div class="footer-section">©Hayyakm2034</div>
+    </footer>
+
+</body>
+</html>
