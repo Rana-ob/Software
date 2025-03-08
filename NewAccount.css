@@ -4,7 +4,7 @@ body {
     color: white;
     font-family: 'Almarai', sans-serif;
     display: flex;
-    flex-direction: column; /* Stack header, main content, and footer vertically */
+    flex-direction: column; 
     justify-content: center;
     align-items: center;
     min-height: 100vh; 
@@ -131,7 +131,7 @@ p a {
     justify-content: space-between;
     padding: 15px 30px;
     background-color: #10021d;
-    z-index: 1000; /* Ensure the header stays above other content */
+    z-index: 1000; 
 }
 
 .logo {
