@@ -26,11 +26,19 @@
                 <h1>حساب جديد</h1>
             </div>
             <div class="form-box">
-                <form class="input-group" id="registerForm">
-                    <input type="text" id="fullName" placeholder="الاسم الكامل" required>
-                    <input type="email" id="email" placeholder="البريد الإلكتروني" required>
-                    <input type="text" id="username" placeholder="اسم المستخدم" required>
-                    <input type="password" id="password" placeholder="الرمز السري" required>
+                <form class="input-group">
+                    <input type="text" placeholder="الاسم الكامل" required>
+                    <input type="email" placeholder="البريد الإلكتروني" required>
+                    <input type="text" placeholder="اسم المستخدم" required>
+                    <input type="password" placeholder="الرمز السري" required>
+                         <div class="user-type">
+                        <label>
+                            مدير <input type="radio" name="userType" value="admin" required>
+                        </label>
+                        <label>
+                            زائر <input type="radio" name="userType" value="guest">
+                        </label>
+                    </div>
                     <button type="submit">إنشاء الحساب</button>
                 </form>
                 <p>لديك حساب؟ <a href="logIn.html">سجل الدخول</a></p>
