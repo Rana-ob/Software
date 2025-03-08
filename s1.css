@@ -191,3 +191,40 @@ button{
                 width: 90%;
             }
         }
+
+.booking-card,
+.resale-card {
+    background: #2C2A3A;
+    padding: 15px 20px;
+    border-radius: 30px; /* جعل الزوايا مستديرة أكثر */
+    color: white;
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.6;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* تعديلات قسم إعادة بيع التذكرة */
+.resale {
+    display: flex;
+    justify-content: flex-end; /* محاذاة البوكس لليمين */
+    margin-top: 10px;
+    padding-right: 40px; /* زودنا المسافة لزيادة الإزاحة لليمين */
+}
+
+.resale-card {
+    background: #2C2A3A;
+    padding: 5px 15px;
+    border-radius: 30px; /* جعل الشكل بيضاوي بالكامل */
+    color: white;
+    max-width: 220px; /* تصغير العرض ليكون أصغر */
+    text-align: center;
+    font-size: 10px; /* تصغير حجم النص */
+    line-height: 1.4;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    margin-right: -40px; /* دفع البوكس لليمين أكثر */
+}
+
+
