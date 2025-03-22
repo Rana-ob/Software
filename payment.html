@@ -35,15 +35,25 @@
             gap: 10px;
             margin: 15px 0;
         }
-        .payment-option {
+         .payment-option {
             background-color: #3c2b5e;
             border: none;
-            padding: 10px 20px;
+            padding: 8px 15px;
             color: white;
-            font-size: 16px;
+            font-size: 14px;
             cursor: pointer;
             border-radius: 5px;
+            width: 80px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
+        .payment-option img {
+            width: 40px;
+            height: auto;
+        }
+
         .pay-button {
             background-color: #a14ff4;
             border: none;
@@ -92,8 +102,10 @@
             </div>
             <h4>حدد طريقة الدفع</h4>
             <div class="payment-methods">
-                <button class="payment-option">💳 VISA</button>
-                <button class="payment-option">💳 MasterCard</button>
+                <button class="payment-option"><img src="Images/visa.png" alt="VISA"></button>
+                <button class="payment-option"><img src="Images/card.png" alt="MasterCard"></button>
+                <button class="payment-option"><img src="Images/apple-pay.png" alt="Apple Pay"></button>
+                <button class="payment-option"><img src="Images/wallet.png" alt="Wallet"></button>
             </div>
             <button class="pay-button">ادفع الآن</button>
         </section>
