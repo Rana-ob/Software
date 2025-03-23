@@ -1,3 +1,4 @@
+<?php include 'resale_process.php'; ?>
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -89,7 +90,6 @@ button{
             max-width: 550px;
             box-shadow: 0px 0px 20px rgba(155, 52, 235, 0.7);
         }
-
         .ticket-option {
             background: white;
             color: black;
@@ -98,7 +98,6 @@ button{
             margin: 15px 0;
             border: 2px solid #9b34eb;
         }
-
         .confirm-btoon {
             background: #770295;
             color: white;
@@ -109,7 +108,6 @@ button{
             cursor: pointer;
             margin-top: 10px;
         }
-
         .confirm-btoon:hover {
             background: #7d1fc9;
         }
@@ -196,22 +194,26 @@ button{
     </header>
   
 
-    <section class="heroResale">
-        <h1>هل تغيرت خططك ولن تذهب بعد الآن؟</h1>
-    </section>
-    
     <section class="resale">
-        <h2>تستطيع ان تعيد بيع تذكرتك</h2>
-        <p>اختر نوع التذكرة المراد بيعها</p>
-        <div class="ticket-option">
-            <input type="checkbox" id="ticket1" name="ticket" checked>
-            <label for="ticket1">السعودية × البرتغال - 12 فبراير 2034 - 300 ريال</label>
-        </div>
-        <button class="confirm-btoon">تأكيد البيع</button>
+        <h2>تستطيع إعادة بيع تذكرتك</h2>
+        <p>اختر التذكرة المراد بيعها:</p>
+        
+        <form method="post" action="resale_process.php">
+            <?php
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo "<div class='ticket-option'>";
+                    echo "<input type='checkbox' name='resale_tickets[]' value='" . $row['TICKET_ID'] . "'>";
+                    echo "<label> " . $row['TEAM1'] . " × " . $row['TEAM2'] . " - " . $row['MATCH_DATE'] . " - " . $row['PRICE'] . " ريال</label>";
+                    echo "</div>";
+                }
+            } else {
+                echo "<p>لا توجد تذاكر متاحة لإعادة البيع.</p>";
+            }
+            ?>
+            <button type="submit" class="confirm-btoon">تأكيد البيع</button>
+        </form>
     </section>
-
-
-
 
     <footer class="footer">
         <div class="footer-section footer-logo">
