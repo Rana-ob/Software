@@ -1,36 +1,40 @@
 <?php
+
+/* فيه شيء مهم بسيط تضيفينه بالداتا بيس وراح يضبط */
 $servername = "localhost"; 
 $username = "root"; 
-$password = "root"; 
-$dbname = "DatabaseS"; 
+$password = ""; 
+$dbname = "databases"; 
 
-$conn = new mysqli($servername, $username, $password, $dbname , "8889");
+$conn = new mysqli($servername, $username, $password, $dbname );
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 
-// **Delete User (if delete button is clicked)**
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_id'])) {
     $delete_id = intval($_POST['delete_id']);
+
+    // حذف المستخدم مباشرة، سيتم حذف الحجوزات تلقائيًا بفضل ON DELETE CASCADE
     $delete_sql = "DELETE FROM Customer WHERE CUSTOMER_ID = ?";
-    
-    if ($stmt = $conn->prepare($delete_sql)) {
-        $stmt->bind_param("i", $delete_id);
-        if ($stmt->execute()) {
-            echo "<script>alert('User deleted successfully'); window.location.href='index.php';</script>";
-        } else {
-            echo "Error deleting user: " . $conn->error;
-        }
-        $stmt->close();
+    $stmt = $conn->prepare($delete_sql);
+    $stmt->bind_param("i", $delete_id);
+
+    if ($stmt->execute()) {
+echo "<script>
+    alert('User deleted successfully');
+    window.location.href = window.location.href;
+</script>";
+    } else {
+        echo "Error deleting user: " . $conn->error;
     }
+    $stmt->close();
 }
 
-// **Fetch All Customers from Database**
+
+// 3️⃣ جلب بيانات المستخدمين لعرضها في الجدول
 $sql = "SELECT CUSTOMER_ID, CUSTOMER_NAME, CUSTOMER_EMAIL FROM Customer";
 $result = $conn->query($sql);
 ?>
-
 <!DOCTYPE html>
 <html lang="ar">
 <head>
