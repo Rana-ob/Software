@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
     // Check if username or email already exists
-    $stmt = $pdo->prepare("SELECT * FROM users WHERE email = :email OR username = :username");
+    $stmt = $pdo->prepare("SELECT * FROM Customer WHERE email = :email OR username = :username");
     $stmt->execute(['email' => $email, 'username' => $username]);
 
     if ($stmt->rowCount() > 0) {
