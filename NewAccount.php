@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Insert new user
-    $stmt = $pdo->prepare("INSERT INTO users (full_name, email, username, password, user_type) VALUES (:fullName, :email, :username, :password, :userType)");
+    $stmt = $pdo->prepare("INSERT INTO Customer(full_name, email, username, password, user_type) VALUES (:fullName, :email, :username, :password, :userType)");
     $stmt->execute([
         'fullName' => $fullName,
         'email' => $email,
