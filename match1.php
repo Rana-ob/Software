@@ -5,7 +5,10 @@ if ($conn->connect_error) {
     die("فشل الاتصال: " . $conn->connect_error);
 }
 
-$userId = 1; // مؤقتًا للتجربة
+session_start();
+$userId = $_SESSION['user_id'];
+
+//$userId = 1; // مؤقتًا للتجربة
 
 if (isset($_GET['query']) && trim($_GET['query']) !== "") {
     $search = $_GET['query'];

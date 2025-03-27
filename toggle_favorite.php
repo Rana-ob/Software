@@ -1,49 +1,17 @@
 <?php
-//مؤقت للتجربة
+session_start();
 $conn = new mysqli("localhost", "root", "root", "database");
-if ($conn->connect_error) {
-    die("فشل الاتصال: " . $conn->connect_error);
-}
 
-$userId = 1; // مستخدم تجريبي
-
-$check = $conn->prepare("SELECT * FROM Customer WHERE CUSTOMER_ID = ?");
-$check->bind_param("i", $userId);
-$check->execute();
-$result = $check->get_result();
-
-if ($result->num_rows === 0) {
-    $name = 'مستخدم تجريبي';
-    $phone = 1234567890;
-    $email = 'test@hayyakm2034.com';
-    $password = password_hash('123456', PASSWORD_DEFAULT); // كلمة مرور مشفرة
-
-    $insert = $conn->prepare("INSERT INTO Customer (CUSTOMER_ID, CUSTOMER_NAME, CUSTOMER_Phone, CUSTOMER_EMAIL, CUSTOMER_PASSWORD) VALUES (?, ?, ?, ?, ?)");
-    $insert->bind_param("isiss", $userId, $name, $phone, $email, $password);
-
-    if ($insert->execute()) {
-        echo " تم إنشاء المستخدم بنجاح.";
-    } else {
-        echo " خطأ أثناء الإضافة: " . $insert->error;
-    }
-
-    $insert->close();
-} else {
-    echo " المستخدم موجود مسبقًا.";
-}
-
-$check->close();
-$conn->close();
-
-//endd
-
-
-$conn = new mysqli("localhost", "root", "root", "database");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$userId = 1; // مؤقت للتجربة
+if (!isset($_SESSION['user_id'])) {
+    echo "unauthorized";
+    exit;
+}
+
+$userId = $_SESSION['user_id'];
 $matchId = $_POST['match_id'] ?? null;
 
 if (!$matchId) {
