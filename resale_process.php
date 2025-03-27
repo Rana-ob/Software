@@ -14,13 +14,14 @@ $query = "SELECT Ticket.TICKET_ID, Matches.TEAM1, Matches.TEAM2, Matches.MATCH_D
 FROM Ticket
 JOIN Reservation_Ticket ON Ticket.RESERVATION_ID = Reservation_Ticket.RESERVATION_ID
 JOIN Matches ON Reservation_Ticket.MATCH_ID = Matches.MATCH_ID
-WHERE Ticket.RESALE_TICKET = 0"; 
+WHERE Ticket.RESALE_TICKET = 0"; // Fetch only non-resold tickets
 
 $result = $conn->query($query);
 
 if (!$result) {
     die("Error in query: " . $conn->error);
 }
+$tickets_available = $result->num_rows > 0; // Check if tickets exist
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['resale_tickets'])) {

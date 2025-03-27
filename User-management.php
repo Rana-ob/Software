@@ -202,8 +202,10 @@ $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             echo '<div class="card">';
-            echo '<p><strong>الاسم:</strong> ' . htmlspecialchars($row['CUSTOMER_NAME']) . '</p>';
-            echo '<p><strong>البريد الإلكتروني:</strong> <span class="email">' . htmlspecialchars($row['CUSTOMER_EMAIL']) . '</span></p>';
+            echo '<p><strong>الاسم</strong> <br> ' ;
+            echo  htmlspecialchars($row['CUSTOMER_NAME']) . '</p>';
+                        echo '<p><strong>البريد الإلكتروني</strong> <span class="email">'. "<br>" ;
+            echo htmlspecialchars($row['CUSTOMER_EMAIL']) . '</span></p>';
             echo '<form method="post">';
             echo '<input type="hidden" name="delete_id" value="' . $row['CUSTOMER_ID'] . '">';
             echo '<button type="submit" class="delete-btn">حذف ✖</button>';
