@@ -1,36 +1,40 @@
 <?php
+
+/* فيه شيء مهم بسيط تضيفينه بالداتا بيس وراح يضبط */
 $servername = "localhost"; 
 $username = "root"; 
-$password = "root"; 
-$dbname = "DatabaseS"; 
+$password = ""; 
+$dbname = "databases"; 
 
-$conn = new mysqli($servername, $username, $password, $dbname , "8889");
+$conn = new mysqli($servername, $username, $password, $dbname );
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 
-// **Delete User (if delete button is clicked)**
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_id'])) {
     $delete_id = intval($_POST['delete_id']);
+
+    // حذف المستخدم مباشرة، سيتم حذف الحجوزات تلقائيًا بفضل ON DELETE CASCADE
     $delete_sql = "DELETE FROM Customer WHERE CUSTOMER_ID = ?";
-    
-    if ($stmt = $conn->prepare($delete_sql)) {
-        $stmt->bind_param("i", $delete_id);
-        if ($stmt->execute()) {
-            echo "<script>alert('User deleted successfully'); window.location.href='index.php';</script>";
-        } else {
-            echo "Error deleting user: " . $conn->error;
-        }
-        $stmt->close();
+    $stmt = $conn->prepare($delete_sql);
+    $stmt->bind_param("i", $delete_id);
+
+    if ($stmt->execute()) {
+echo "<script>
+    alert('User deleted successfully');
+    window.location.href = window.location.href;
+</script>";
+    } else {
+        echo "Error deleting user: " . $conn->error;
     }
+    $stmt->close();
 }
 
-// **Fetch All Customers from Database**
+
+// 3️⃣ جلب بيانات المستخدمين لعرضها في الجدول
 $sql = "SELECT CUSTOMER_ID, CUSTOMER_NAME, CUSTOMER_EMAIL FROM Customer";
 $result = $conn->query($sql);
 ?>
-
 <!DOCTYPE html>
 <html lang="ar">
 <head>
@@ -198,8 +202,10 @@ $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             echo '<div class="card">';
-            echo '<p><strong>الاسم:</strong> ' . htmlspecialchars($row['CUSTOMER_NAME']) . '</p>';
-            echo '<p><strong>البريد الإلكتروني:</strong> <span class="email">' . htmlspecialchars($row['CUSTOMER_EMAIL']) . '</span></p>';
+            echo '<p><strong>الاسم</strong> <br> ' ;
+            echo  htmlspecialchars($row['CUSTOMER_NAME']) . '</p>';
+                        echo '<p><strong>البريد الإلكتروني</strong> <span class="email">'. "<br>" ;
+            echo htmlspecialchars($row['CUSTOMER_EMAIL']) . '</span></p>';
             echo '<form method="post">';
             echo '<input type="hidden" name="delete_id" value="' . $row['CUSTOMER_ID'] . '">';
             echo '<button type="submit" class="delete-btn">حذف ✖</button>';

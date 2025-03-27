@@ -1,3 +1,52 @@
+<?php
+session_start();
+$loginError = "";
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $conn = new mysqli("localhost", "root", "root", "database");
+    if ($conn->connect_error) {
+        die("فشل الاتصال: " . $conn->connect_error);
+    }
+
+    $loginInput = $_POST['username'];
+    $password = $_POST['password'];
+
+    $stmt = $conn->prepare("SELECT CUSTOMER_ID, CUSTOMER_PASSWORD, USER_TYPE FROM Customer WHERE CUSTOMER_EMAIL = ?");
+    $stmt->bind_param("s", $loginInput);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows === 1) {
+        $user = $result->fetch_assoc();
+        $hashedPassword = $user['CUSTOMER_PASSWORD'];
+
+        if (password_verify($password, $hashedPassword)) {
+            $_SESSION['customer_id'] = $user['CUSTOMER_ID'];
+
+            if ($user['USER_TYPE'] === "admin") {
+                header("Location: adminProfile.html");
+            } else {
+                header("Location: homepage.html");
+            }
+            exit();
+        }
+    }
+
+    $loginError = " اسم المستخدم أو كلمة المرور غير صحيحة";
+
+    $stmt->close();
+    $conn->close();
+}
+?>
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -310,40 +359,24 @@ label {
             </div>
             <br>
             <div class="form-box">
-                <form class="input-group" id="loginForm">
-                    <input type="text" id="username" placeholder="اسم المستخدم" required>
-                    <input type="password" id="password" placeholder="الرمز السري" required>
-                    <div class="user-type">
-                        <label>
-                            مدير <input type="radio" name="userType" value="admin" required>
-                        </label>
-                        <br>
-                        <label>
-                            زائر <input type="radio" name="userType" value="guest">
-                        </label>
-                    </div>
-                    <p>ليس لديك حساب؟ <a href="NewAccount.html">إنشاء حساب</a></p>
-                    <button type="submit">سجل الدخول</button>
-                </form>
+            <form class="input-group" id="loginForm" action="login.php" method="POST">
+            <input type="text" id="username" name="username" placeholder="البريد الإلكتروني" required>
+    <input type="password" id="password" name="password" placeholder="الرمز السري" required>
+
+    <p>ليس لديك حساب؟ <a href="NewAccount.html">إنشاء حساب</a></p>
+
+    <button type="submit" name="login">سجل الدخول</button>
+
+    <?php
+    //  رسالة الخطأً
+    if (isset($_POST['login']) && !empty($loginError)) {
+        echo "<p style='color:red; font-weight:bold; margin-top: 15px;'> $loginError</p>";
+    }
+    ?>
+</form>
+
             </div>
         </div>
-        <script>
-            document.getElementById("loginForm").addEventListener("submit", function(event) {
-                event.preventDefault();
-                let username = document.getElementById("username").value.trim();
-                let password = document.getElementById("password").value.trim();
-                let userType = document.querySelector('input[name="userType"]:checked');
-                
-                if (username === "" || password === "" || !userType) {
-                    alert("الرجاء ملء جميع الحقول المطلوبة!");
-                } else {
-                    let redirectPage = userType.value === "admin" ? "adminProfile.html" : "homepage.html";
-                    setTimeout(function() {
-                        window.location.href = redirectPage;
-                    }, 100);
-                }
-            });
-        </script>
         
         
         <div class="content">

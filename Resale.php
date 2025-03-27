@@ -204,14 +204,16 @@ button{
                 while ($row = $result->fetch_assoc()) {
                     echo "<div class='ticket-option'>";
                     echo "<input type='checkbox' name='resale_tickets[]' value='" . $row['TICKET_ID'] . "'>";
-                    echo "<label> " . $row['TEAM1'] . " × " . $row['TEAM2'] . " - " . $row['MATCH_DATE'] . " - " . $row['PRICE'] . " ريال</label>";
+                    echo "<label> " . $row['TEAM1'] . " × " . $row['TEAM2'] . " - " . $row['MATCH_DATE'] . " - " . $row['PRICE'] . " SAR</label>";
                     echo "</div>";
                 }
             } else {
                 echo "<p>لا توجد تذاكر متاحة لإعادة البيع.</p>";
             }
             ?>
+             <?php if ($tickets_available): ?>
             <button type="submit" class="confirm-btoon">تأكيد البيع</button>
+        <?php endif; ?>
         </form>
     </section>
 
