@@ -3,9 +3,9 @@ $conn = new mysqli("localhost", "root", "root", "database");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-//session_start();
-//$userId = $_SESSION['user_id'];
-$userId = 1; // مؤقتًا للتجربة
+session_start();
+$userId = $_SESSION['user_id'];
+//$userId = 1; // مؤقتًا للتجربة
 
 $sql = "SELECT M.*, 
         (SELECT 1 FROM Favorites F WHERE F.USER_ID = $userId AND F.MATCH_ID = M.MATCH_ID LIMIT 1) AS is_favorite 
@@ -24,6 +24,8 @@ while ($row = $result->fetch_assoc()) {
     } else if ($row['GROUP_ID'] == 2) {
         $group2[] = $row;
     }
+
+    
 }
 
 
@@ -331,7 +333,8 @@ while ($row = $result->fetch_assoc()) {
         <img src="Images/<?= $row['MATCH_IMAGE'] ?>" alt="<?= $row['TEAM1'] ?> vs <?= $row['TEAM2'] ?>">
             <p><?= $row['TEAM1'] ?> × <?= $row['TEAM2'] ?></p>
             <p><?= $row['MATCH_DATE'] ?> | <?= $row['VENUE'] ?></p>
-            <button onclick="goToMatch('<?= $row['MATCH_ID'] ?>', '<?= $row['TEAM1'] ?>', '<?= $row['TEAM2'] ?>', '<?= $row['MATCH_IMAGE'] ?>')">احجز الآن</button>
+            <button onclick="goToMatch('<?= $row['MATCH_ID'] ?>')">احجز الآن</button>
+
         </div>
     <?php } ?>
 </div>
@@ -345,7 +348,8 @@ while ($row = $result->fetch_assoc()) {
         <img src="Images/<?= $row['MATCH_IMAGE'] ?>" alt="<?= $row['TEAM1'] ?> vs <?= $row['TEAM2'] ?>">
             <p><?= $row['TEAM1'] ?> × <?= $row['TEAM2'] ?></p>
             <p><?= $row['MATCH_DATE'] ?> | <?= $row['VENUE'] ?></p>
-            <button onclick="goToMatch('<?= $row['MATCH_ID'] ?>', '<?= $row['TEAM1'] ?>', '<?= $row['TEAM2'] ?>', '<?= $row['MATCH_IMAGE'] ?>')">احجز الآن</button>
+            <button onclick="goToMatch('<?= $row['MATCH_ID'] ?>')">احجز الآن</button>
+
         </div>
     <?php } ?>
 </div>
@@ -395,13 +399,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+function goToMatch(id) {
+    const url = `match2.php?id=${id}`;
+    window.location.href = url;
+}
 
-
-
-    function goToMatch(id, team1, team2, image) {
-        const url = `match2.html?id=${id}&team1=${encodeURIComponent(team1)}&team2=${encodeURIComponent(team2)}&image=${encodeURIComponent(image)}`;
-        window.location.href = url;
-    }
 
     function performSearch() {
         const query = searchInput.value.trim();
