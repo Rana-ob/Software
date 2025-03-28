@@ -11,8 +11,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $loginInput = $_POST['username'];
     $password = $_POST['password'];
 
-    $stmt = $conn->prepare("SELECT CUSTOMER_ID, CUSTOMER_PASSWORD, USER_TYPE FROM Customer WHERE CUSTOMER_EMAIL = ?");
-    $stmt->bind_param("s", $loginInput);
+    $stmt = $conn->prepare("SELECT CUSTOMER_ID, CUSTOMER_PASSWORD, USER_TYPE FROM Customer 
+    WHERE CUSTOMER_EMAIL = ? OR CUSTOMER_USERNAME = ?");
+    $stmt->bind_param("ss", $loginInput, $loginInput);
     $stmt->execute();
     $result = $stmt->get_result();
 
@@ -360,7 +361,8 @@ label {
             <br>
             <div class="form-box">
             <form class="input-group" id="loginForm" action="login.php" method="POST">
-            <input type="text" id="username" name="username" placeholder="البريد الإلكتروني" required>
+            <input type="text" id="username" name="username" placeholder="البريد الإلكتروني أو اسم المستخدم" required>
+
     <input type="password" id="password" name="password" placeholder="الرمز السري" required>
 
     <p>ليس لديك حساب؟ <a href="NewAccount.html">إنشاء حساب</a></p>

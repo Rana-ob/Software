@@ -1,7 +1,7 @@
 <?php
 session_start();
+
 if (!isset($_SESSION['customer_id'])) {
-    // إذا ما فيه جلسة، يرجع لصفحة تسجيل الدخول
     header("Location: login.php");
     exit();
 }
@@ -12,6 +12,15 @@ if ($conn->connect_error) {
 }
 
 $customerId = $_SESSION['customer_id'];
+
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['phone'])) {
+    $newPhone = $_POST['phone'];
+    $update = $conn->prepare("UPDATE Customer SET CUSTOMER_PHONE = ? WHERE CUSTOMER_ID = ?");
+    $update->bind_param("si", $newPhone, $customerId);
+    $update->execute();
+    $update->close();
+}
+
 $stmt = $conn->prepare("SELECT CUSTOMER_NAME, CUSTOMER_EMAIL, CUSTOMER_USERNAME, CUSTOMER_PHONE FROM Customer WHERE CUSTOMER_ID = ?");
 $stmt->bind_param("i", $customerId);
 $stmt->execute();
@@ -20,13 +29,17 @@ $result = $stmt->get_result();
 if ($result->num_rows === 1) {
     $userData = $result->fetch_assoc();
 } else {
-    echo " لم يتم العثور على معلومات المستخدم.";
+    echo "لم يتم العثور على معلومات المستخدم.";
     exit();
 }
 
 $stmt->close();
 $conn->close();
 ?>
+
+
+
+
 
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
@@ -218,6 +231,7 @@ button{
             transform: scale(1.02);
         }
 
+
     </style>
 
 </head>
@@ -245,9 +259,12 @@ button{
 
             <label>اسم المستخدم</label>
             <input type="text" value="<?php echo htmlspecialchars($userData['CUSTOMER_USERNAME']); ?>" readonly>
-
+            <form method="post" action="">
             <label>رقم الهاتف</label>
-            <input type="text" value="<?php echo htmlspecialchars($userData['CUSTOMER_PHONE']); ?>" readonly>
+            <input type="text" name="phone" value="<?php echo htmlspecialchars($userData['CUSTOMER_PHONE'] ?? ''); ?>">
+        </form>
+
+            
         </section>
 
         <section class="admin-actions">
@@ -256,6 +273,16 @@ button{
             <a href="Reservations-Management.php"><button class="manage">إدارة الحجوزات</button></a>
         </section>
     </div>
+
+    <script>
+        document.getElementById("phoneInput").addEventListener("keypress", function(e) {
+            if (e.key === "Enter") {
+                e.preventDefault(); 
+                this.form.submit(); 
+            }
+        });
+        </script>
+
       
     <br><br>
     <footer class="footer">
